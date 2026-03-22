@@ -795,7 +795,7 @@ async def error_handler(update: Update, context: ContextTypes.DEFAULT_TYPE) -> N
 
 # ---------- Main ----------
 def main() -> None:
-    token = "8773825512:AAE5Cz2C21u1o_aT89YG0Au_i5lATMrXc-Q"
+    token = os.getenv("BOT_TOKEN")
     if not token:
         raise ValueError("No TELEGRAM_BOT_TOKEN found in environment.")
     application = Application.builder().token(token).build()
